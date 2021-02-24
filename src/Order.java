@@ -1,79 +1,66 @@
-public class Order {
-    /**
-     * Frst params
-     */
-    private short ID;
-    private String name;
-    private String courier;
-    private String dateTme;
+public class Order extends Universal {
+    private String dayTime;
     private byte type;
-    /**
-     * Constructor
-     */
+    public Order(int ID, String name, String courier, String dayTime, byte type) {
+        this.ID=ID;
+        this.name=name;
+        this.lastName=courier;
+        this.dayTime=dayTime;
+        this.type=type;
+    }
+
     public Order() {
-        this.ID=1;
-        this.name="Window";
-        this.courier="Petrenko";
-    }
-    /**
-     * geters
-     */
-
-    public short getID() {
-        return ID;
+        this(0,"Lada","Calina","day", (byte) 2);
     }
 
+    @Override
+    public int getID() {
+        return super.getID();
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return super.getName();
     }
 
-    public String getCourier() {
-        return courier;
+    @Override
+    public String getLastName() {
+        return super.getLastName();
     }
 
-    public String getDateTme() {
-        return dateTme;
+    public String getDayTime() {
+        return dayTime;
     }
 
     public byte getType() {
         return type;
     }
-    /**
-     * Setters
-     */
 
-    public void setID(short ID) {
-        this.ID = ID;
+    @Override
+    public void setID(int ID) {
+        super.setID(ID);
     }
 
+    @Override
     public void setName(String name) {
-        this.name = name;
+        super.setName(name);
     }
 
-    public void setCourier(String courier) {
-        this.courier = courier;
+    @Override
+    public void setLastName(String lastName) {
+        super.setLastName(lastName);
     }
 
-    public void setDateTme(String dateTme) {
-        this.dateTme = dateTme;
+    public void setDayTime(String dayTime) {
+        this.dayTime = dayTime;
     }
 
     public void setType(byte type) {
         this.type = type;
     }
-    /**
-     * method toString
-     * @return
-     */
 
     @Override
     public String toString() {
-        return "Order{" +
-                "ID=" + ID +
-                ", name='" + name + '\'' +
-                ", courier='" + courier + '\'' +
-                ", dateTme='" + dateTme + '\'' +
-                ", type=" + type +
-                '}';
+        return "Order{"+super.toString()+", dayTime='" + dayTime + '\''+", type='" + type + '\''+'}';
     }
 }

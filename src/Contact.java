@@ -1,71 +1,55 @@
-public class Contact {
-    /**
-     * Frst params
-     */
-    private short ID;
-    private String firstName;
-    private String lastName;
+public class Contact extends Universal {
     private String address;
-
-    /**
-     * Constructor
-     */
+    public Contact(int ID, String name, String lastname, String address) {
+        this.ID=ID;
+        this.name=name;
+        this.lastName=lastname;
+        this.address=address;
+    }
     public Contact(){
-        this.firstName = "Vasya";
-        this.lastName = "Sidorov";
-        this.address = "Pushkin street 4/2";
+        this(0,"Vasya","Makarov","Jopensk 5");
     }
 
-    /**
-     * geters
-     */
-    public short getID() {
-        return ID;
+    @Override
+    public int getID() {
+        return super.getID();
     }
 
-    public String getFirstName() {
-        return firstName;
+    @Override
+    public String getName() {
+        return super.getName();
     }
 
+    @Override
     public String getLastName() {
-        return lastName;
+        return super.getLastName();
     }
 
     public String getAddress() {
         return address;
     }
 
-    /**
-     * Setters
-     */
-
-    public void setID(short ID) {
-        this.ID = ID;
+    @Override
+    public void setID(int ID) {
+        super.setID(ID);
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    @Override
+    public void setName(String name) {
+        super.setName(name);
     }
 
+    @Override
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        super.setLastName(lastName);
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    /**
-     * method toString
-     * @return
-     */
     @Override
     public String toString() {
-        return "Contact{" +
-                "ID=" + ID +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+        return "Contact{"+super.toString()+", address='" + address + '\''+'}';
     }
 }

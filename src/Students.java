@@ -1,48 +1,45 @@
-public class Students {
-    /**
-     * Frst params
-     */
-    private byte ID_studenta;
-    private String Fam;
-    private String Name;
-    private String Groupa;
-    private String Department;
+public class Students extends Universal {
+    private String groupa;
+    private String department;
     private String discipline;
     private byte mark;
-    private String NameTeacher;
-    /**
-     * Constructor
-     */
-    public Students() {
-        this.ID_studenta=1;
-        this.Fam="Petrov";
-        this.Name="Vlad";
-        this.Groupa="3G";
-        this.Department="121 programrng";
-        this.discipline="OOP";
-    }
-    /**
-     * geters
-     */
+    private String nameTeacher;
 
-    public byte getID_studenta() {
-        return ID_studenta;
+    public Students(int ID, String name, String lastname, String groupa, String department, String discipline, byte mark, String nameTeacher) {
+        this.ID=ID;
+        this.name=name;
+        this.lastName=lastname;
+        this.groupa=groupa;
+        this.department=department;
+        this.discipline=discipline;
+        this.mark=mark;
+        this.nameTeacher=nameTeacher;
+    }
+    public Students(){
+        this(0,"john","Marget","3G","OOP","121", (byte) 5,"Maslow");
     }
 
-    public String getFam() {
-        return Fam;
+    @Override
+    public int getID() {
+        return super.getID();
     }
 
+    @Override
     public String getName() {
-        return Name;
+        return super.getName();
+    }
+
+    @Override
+    public String getLastName() {
+        return super.getLastName();
     }
 
     public String getGroupa() {
-        return Groupa;
+        return groupa;
     }
 
     public String getDepartment() {
-        return Department;
+        return department;
     }
 
     public String getDiscipline() {
@@ -54,30 +51,30 @@ public class Students {
     }
 
     public String getNameTeacher() {
-        return NameTeacher;
-    }
-    /**
-     * Setters
-     */
-
-    public void setID_studenta(byte ID_studenta) {
-        this.ID_studenta = ID_studenta;
+        return nameTeacher;
     }
 
-    public void setFam(String fam) {
-        Fam = fam;
+    @Override
+    public void setID(int ID) {
+        super.setID(ID);
     }
 
+    @Override
     public void setName(String name) {
-        Name = name;
+        super.setName(name);
+    }
+
+    @Override
+    public void setLastName(String lastName) {
+        super.setLastName(lastName);
     }
 
     public void setGroupa(String groupa) {
-        Groupa = groupa;
+        this.groupa = groupa;
     }
 
     public void setDepartment(String department) {
-        Department = department;
+        this.department = department;
     }
 
     public void setDiscipline(String discipline) {
@@ -89,24 +86,11 @@ public class Students {
     }
 
     public void setNameTeacher(String nameTeacher) {
-        NameTeacher = nameTeacher;
+        this.nameTeacher = nameTeacher;
     }
-    /**
-     * method toString
-     * @return
-     */
 
     @Override
     public String toString() {
-        return "Students{" +
-                "ID_studenta=" + ID_studenta +
-                ", Fam='" + Fam + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Groupa='" + Groupa + '\'' +
-                ", Department='" + Department + '\'' +
-                ", discipline='" + discipline + '\'' +
-                ", mark=" + mark +
-                ", NameTeacher='" + NameTeacher + '\'' +
-                '}';
+        return "Students{"+super.toString()+", groupa='" + groupa + '\''+", department='" + department + '\''+", discipline='" + discipline + '\''+", mark='" + mark + '\''+", nameTeacher='" + nameTeacher + '\''+'}';
     }
 }
