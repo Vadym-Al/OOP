@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Universal {
     protected int ID;
     protected String name;
@@ -37,5 +40,12 @@ public class Universal {
         return "ID=" + ID +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'';
+    }
+    public void fileWriter(){
+        try(FileWriter writer = new FileWriter("info.txt", false)) {
+            writer.write(toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

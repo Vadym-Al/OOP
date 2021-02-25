@@ -93,4 +93,9 @@ public class Students extends Universal {
     public String toString() {
         return "Students{"+super.toString()+", groupa='" + groupa + '\''+", department='" + department + '\''+", discipline='" + discipline + '\''+", mark='" + mark + '\''+", nameTeacher='" + nameTeacher + '\''+'}';
     }
+
+    @Override
+    public void fileWriter() {
+        super.fileWriter();
+    }
 }

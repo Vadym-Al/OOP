@@ -63,4 +63,9 @@ public class Order extends Universal {
     public String toString() {
         return "Order{"+super.toString()+", dayTime='" + dayTime + '\''+", type='" + type + '\''+'}';
     }
+
+    @Override
+    public void fileWriter() {
+        super.fileWriter();
+    }
 }

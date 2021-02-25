@@ -7,7 +7,7 @@ public class Contact extends Universal {
         this.address=address;
     }
     public Contact(){
-        this(0,"Vasya","Makarov","Jopensk 5");
+        this(0,"Vasya","Makarov","Lorens 5");
     }
 
     @Override
@@ -51,5 +51,10 @@ public class Contact extends Universal {
     @Override
     public String toString() {
         return "Contact{"+super.toString()+", address='" + address + '\''+'}';
+    }
+
+    @Override
+    public void fileWriter() {
+        super.fileWriter();
     }
 }
