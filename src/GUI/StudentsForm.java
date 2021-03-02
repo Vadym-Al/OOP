@@ -1,6 +1,6 @@
 package GUI;
 
-import Actors.Order;
+
 import Actors.Students;
 import Interface.FormManager;
 
@@ -143,7 +143,7 @@ public class StudentsForm extends JFrame {
 
         JButton button1 = new JButton("Add Info");
         gbc.gridx = 4;
-        gbc.gridwidth = 2;
+        gbc.gridwidth = 4;
         gbc.gridy = 5;
         button1.addActionListener(addInfo);
         pane.add(button1, gbc);
