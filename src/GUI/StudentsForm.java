@@ -1,0 +1,198 @@
+package GUI;
+
+import Actors.Order;
+import Actors.Students;
+import Interface.FormManager;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class StudentsForm extends JFrame {
+    private final Students students = new Students();
+    public StudentsForm(final FormManager manager) {
+        this.setTitle("Order");
+        this.setBounds(750, 350, 700, 300);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel pane = new JPanel(new GridBagLayout());
+        this.setContentPane(pane);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        JLabel label1 = new JLabel("ID");
+        gbc.gridx = 4;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        pane.add(label1, gbc);
+
+        JLabel label2 = new JLabel("First Name");
+        gbc.gridx = 4;
+        gbc.gridwidth = 1;
+        gbc.gridy = 1;
+        pane.add(label2, gbc);
+
+        JLabel label3 = new JLabel("Last Name");
+        gbc.gridx = 4;
+        gbc.gridwidth = 1;
+        gbc.gridy = 2;
+        pane.add(label3, gbc);
+
+        JLabel label4 = new JLabel("Group");
+        gbc.gridx = 4;
+        gbc.gridwidth = 1;
+        gbc.gridy = 3;
+        pane.add(label4, gbc);
+
+        JLabel label5 = new JLabel("Department");
+        gbc.gridx = 6;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        pane.add(label5, gbc);
+
+        JLabel label6 = new JLabel("Discipline");
+        gbc.gridx = 6;
+        gbc.gridwidth = 1;
+        gbc.gridy = 1;
+        pane.add(label6, gbc);
+
+        JLabel label7 = new JLabel("Mark");
+        gbc.gridx = 6;
+        gbc.gridwidth = 1;
+        gbc.gridy = 2;
+        pane.add(label7, gbc);
+
+        JLabel label8 = new JLabel("Name Teacher");
+        gbc.gridx = 6;
+        gbc.gridwidth = 1;
+        gbc.gridy = 3;
+        pane.add(label8, gbc);
+
+        JTextField textField1 = new JTextField();
+        gbc.gridx = 5;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        pane.add(textField1, gbc);
+
+        JTextField textField2 = new JTextField();
+        gbc.gridx = 5;
+        gbc.gridwidth = 1;
+        gbc.gridy = 1;
+        pane.add(textField2, gbc);
+
+        JTextField textField3 = new JTextField();
+        gbc.gridx = 5;
+        gbc.gridwidth = 1;
+        gbc.gridy = 2;
+        pane.add(textField3, gbc);
+
+        JTextField textField4 = new JTextField();
+        gbc.gridx = 5;
+        gbc.gridwidth = 1;
+        gbc.gridy = 3;
+        pane.add(textField4, gbc);
+
+        JTextField textField5 = new JTextField();
+        gbc.gridx = 7;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        pane.add(textField5, gbc);
+
+        JTextField textField6 = new JTextField();
+        gbc.gridx = 7;
+        gbc.gridwidth = 1;
+        gbc.gridy = 1;
+        pane.add(textField6, gbc);
+
+        JTextField textField7 = new JTextField();
+        gbc.gridx = 7;
+        gbc.gridwidth = 1;
+        gbc.gridy = 2;
+        pane.add(textField7, gbc);
+
+        JTextField textField8 = new JTextField();
+        gbc.gridx = 7;
+        gbc.gridwidth = 1;
+        gbc.gridy = 3;
+        pane.add(textField8, gbc);
+
+        ActionListener backMenu = (ActionEvent e) -> manager.swapStudents();
+        ActionListener addInfo = (ActionEvent e) -> {
+            students.setID(Integer.parseInt(textField1.getText()));
+            students.setName(textField2.getText());
+            students.setLastName(textField3.getText());
+            students.setGroupa(textField4.getText());
+            students.setDepartment(textField5.getText());
+            students.setDiscipline(textField6.getText());
+            students.setMark(Byte.parseByte(textField7.getText()));
+            students.setNameTeacher(textField8.getText());
+            students.fillArray();
+        };
+        ActionListener show = (ActionEvent e) -> {
+            StringBuilder message = new StringBuilder();
+            for (int i = 0; i < students.getArrayList().size(); i++) {
+                message.append(students.getArrayList().get(i)).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, message.toString(), "Output", JOptionPane.PLAIN_MESSAGE);
+        };
+        ActionListener sort = (ActionEvent e) -> students.sortArray();
+        ActionListener revers = (ActionEvent e) -> students.reverseArray();
+        ActionListener save = (ActionEvent e) -> students.fileWriter();
+
+        JButton button1 = new JButton("Add Info");
+        gbc.gridx = 4;
+        gbc.gridwidth = 2;
+        gbc.gridy = 5;
+        button1.addActionListener(addInfo);
+        pane.add(button1, gbc);
+
+        JButton button2 = new JButton("Show");
+        gbc.gridx = 1;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        button2.addActionListener(show);
+        pane.add(button2, gbc);
+
+        JButton button3 = new JButton("Sort");
+        gbc.gridx = 2;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        button3.addActionListener(sort);
+        pane.add(button3, gbc);
+
+        JButton button4 = new JButton("Save as txt");
+        gbc.gridx = 1;
+        gbc.gridwidth = 1;
+        gbc.gridy = 1;
+        button4.addActionListener(save);
+        pane.add(button4, gbc);
+
+        JButton button5 = new JButton("Reverse");
+        gbc.gridx = 2;
+        gbc.gridwidth = 1;
+        gbc.gridy = 1;
+        button5.addActionListener(revers);
+        pane.add(button5, gbc);
+
+        JButton button6 = new JButton("Back to Menu");
+        gbc.gridx = 1;
+        gbc.gridwidth = 2;
+        gbc.gridy = 2;
+        button6.addActionListener(backMenu);
+        pane.add(button6, gbc);
+
+        JLabel html1 = new JLabel("");
+        gbc.gridx = 0;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        pane.add(html1, gbc);
+
+        JLabel html2 = new JLabel("");
+        gbc.gridx = 3;
+        gbc.gridwidth = 1;
+        gbc.gridy = 0;
+        pane.add(html2, gbc);
+    }
+}
