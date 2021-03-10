@@ -96,7 +96,7 @@ public class Students extends Universal {
 
     @Override
     public String toString() {
-        return "Actors.Students{"+super.toString()+", groupa='" + groupa + '\''+", department='" + department + '\''+", discipline='" + discipline + '\''+", mark='" + mark + '\''+", nameTeacher='" + nameTeacher + '\''+'}';
+        return "Students{"+super.toString()+", groupa='" + groupa + '\''+", department='" + department + '\''+", discipline='" + discipline + '\''+", mark='" + mark + '\''+", nameTeacher='" + nameTeacher + '\''+'}';
     }
 
     @Override

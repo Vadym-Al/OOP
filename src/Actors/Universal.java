@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
 public class Universal{
     protected int ID;
     protected ArrayList<String> arrayList;
@@ -75,5 +76,4 @@ public class Universal{
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
 }

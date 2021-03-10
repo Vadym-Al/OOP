@@ -55,7 +55,7 @@ public class Contact extends Universal {
 
     @Override
     public String toString() {
-        return "Actors.Contact{"+super.toString()+", address='" + address + '\''+'}';
+        return "Contact{"+super.toString()+", address='" + address + '\''+'}';
     }
 
     @Override

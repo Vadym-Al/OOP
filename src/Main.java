@@ -8,9 +8,11 @@ import javax.swing.*;
 
 public class Main implements FormManager {
     private Menu menu;
+
     private ContactForm contactForm;
     private OrderForm orderForm;
     private StudentsForm studentsForm;
+
     public static void main(String[] args){
         SwingUtilities.invokeLater(new Runnable() {
             @Override

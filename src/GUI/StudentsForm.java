@@ -129,6 +129,7 @@ public class StudentsForm extends JFrame {
             students.setMark(Byte.parseByte(textField7.getText()));
             students.setNameTeacher(textField8.getText());
             students.fillArray();
+            JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);
         };
         ActionListener show = (ActionEvent e) -> {
             StringBuilder message = new StringBuilder();
@@ -137,9 +138,9 @@ public class StudentsForm extends JFrame {
             }
             JOptionPane.showMessageDialog(null, message.toString(), "Output", JOptionPane.PLAIN_MESSAGE);
         };
-        ActionListener sort = (ActionEvent e) -> students.sortArray();
-        ActionListener revers = (ActionEvent e) -> students.reverseArray();
-        ActionListener save = (ActionEvent e) -> students.fileWriter();
+        ActionListener sort = (ActionEvent e) ->{ students.sortArray(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE); };
+        ActionListener revers = (ActionEvent e) ->{ students.reverseArray(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);};
+        ActionListener save = (ActionEvent e) ->{ students.fileWriter(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);};
 
         JButton button1 = new JButton("Add Info");
         gbc.gridx = 4;

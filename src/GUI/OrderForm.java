@@ -89,6 +89,7 @@ public class OrderForm extends JFrame{
             order.setDayTime(textField4.getText());
             order.setType(Byte.parseByte(textField5.getText()));
             order.fillArray();
+            JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);
         };
         ActionListener show = (ActionEvent e) -> {
             StringBuilder message = new StringBuilder();
@@ -97,9 +98,9 @@ public class OrderForm extends JFrame{
             }
             JOptionPane.showMessageDialog(null, message.toString(), "Output", JOptionPane.PLAIN_MESSAGE);
         };
-        ActionListener sort = (ActionEvent e) -> order.sortArray();
-        ActionListener revers = (ActionEvent e) -> order.reverseArray();
-        ActionListener save = (ActionEvent e) -> order.fileWriter();
+        ActionListener sort = (ActionEvent e) ->{ order.sortArray(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE); };
+        ActionListener revers = (ActionEvent e) ->{ order.reverseArray(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE); };
+        ActionListener save = (ActionEvent e) ->{ order.fileWriter(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE); };
 
         JButton button1 = new JButton("Add Info");
         gbc.gridx = 4;

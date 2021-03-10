@@ -26,7 +26,7 @@ public class Menu extends JFrame {
         ActionListener firstAction = (ActionEvent e) -> manager.swapContact();
         ActionListener secondAction = (ActionEvent e) -> manager.swapOrder();
         ActionListener thirdAction = (ActionEvent e) -> manager.swapStudents();
-        ActionListener fourthAction = (ActionEvent e) ->{
+        ActionListener fourthAction = (ActionEvent e) -> {
             try(FileReader reader = new FileReader("info.txt")) {
                 StringBuilder message= new StringBuilder();
                 int c;

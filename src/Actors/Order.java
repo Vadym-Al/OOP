@@ -66,7 +66,7 @@ public class Order extends Universal {
 
     @Override
     public String toString() {
-        return "Actors.Order{"+super.toString()+", dayTime='" + dayTime + '\''+", type='" + type + '\''+'}';
+        return "Order{"+super.toString()+", dayTime='" + dayTime + '\''+", type='" + type + '\''+'}';
     }
 
     @Override

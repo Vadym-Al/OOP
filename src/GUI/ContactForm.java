@@ -2,7 +2,6 @@ package GUI;
 
 import Actors.Contact;
 import Interface.FormManager;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -76,6 +75,7 @@ public class ContactForm extends JFrame {
             contact.setLastName(textField3.getText());
             contact.setAddress(textField4.getText());
             contact.fillArray();
+            JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);
         };
         ActionListener show = (ActionEvent e) ->{
             StringBuilder message= new StringBuilder();
@@ -84,9 +84,10 @@ public class ContactForm extends JFrame {
             }
           JOptionPane.showMessageDialog(null, message.toString(),"Output",JOptionPane.PLAIN_MESSAGE);
         };
-        ActionListener sort = (ActionEvent e) -> contact.sortArray();
-        ActionListener revers = (ActionEvent e) -> contact.reverseArray();
-        ActionListener save = (ActionEvent e) ->contact.fileWriter();
+        ActionListener sort = (ActionEvent e) ->{ contact.sortArray();
+            JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);};
+        ActionListener revers = (ActionEvent e) ->{ contact.reverseArray(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);};
+        ActionListener save = (ActionEvent e) -> {contact.fileWriter(); JOptionPane.showMessageDialog(null, "Done!","Output",JOptionPane.PLAIN_MESSAGE);};
 
         JButton button1 = new JButton("Add Info");
         gbc.gridx=4;
